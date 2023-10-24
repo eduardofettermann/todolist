@@ -26,7 +26,12 @@ public class TaskController {
 
     @PutMapping("/{id}")
     public Task changeTask(@RequestBody UpdateTask updateTask, @PathVariable("id") String id) throws Exception {
-        return taskService.updateTask(updateTask,id);
+        return taskService.updateTask(updateTask, id);
 
+    }
+
+    @DeleteMapping("{/id}")
+    public void deleteTask(@PathVariable("id") String id) {
+        taskService.deleteTask(id);
     }
 }

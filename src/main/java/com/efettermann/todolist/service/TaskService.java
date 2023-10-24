@@ -21,11 +21,15 @@ public class TaskService {
         return taskRepository.findAll();
     }
 
-    public Task updateTask(UpdateTask updateTask, String id) throws Exception{
+    public Task updateTask(UpdateTask updateTask, String id) throws Exception {
         Task taskToUpdate = taskRepository.findById(id)
                 .orElseThrow(() -> new Exception("O id não foi encontrado no banco de dados"));
         taskToUpdate.setTitle(updateTask.getTitle());
         taskToUpdate.setDescription(updateTask.getDescription());
         return taskRepository.save(taskToUpdate);
+    }
+
+    public void deleteTask(String id) {
+        taskRepository.deleteById(id);
     }
 }
