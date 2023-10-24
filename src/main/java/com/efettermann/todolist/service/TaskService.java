@@ -9,4 +9,8 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class TaskService {
     private TaskRepository taskRepository;
+
+    public Task saveTask(Task task) {
+        return taskRepository.save(task);
+    }
 }
