@@ -5,6 +5,8 @@ import com.efettermann.todolist.repository.TaskRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class TaskService {
@@ -12,5 +14,9 @@ public class TaskService {
 
     public Task saveTask(Task task) {
         return taskRepository.save(task);
+    }
+
+    public List<Task> getTasks() {
+        return taskRepository.findAll();
     }
 }
