@@ -1,2 +1,7 @@
-package com.efettermann.todolist.service;public class TaskService {
+package com.efettermann.todolist.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class TaskService {
 }
